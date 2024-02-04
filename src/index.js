@@ -1,9 +1,10 @@
 import * as readline from 'readline/promises';
-import { stdin as input, stdout as output } from 'node:process';
+import { stdin as input, stdout as output } from 'process';
 
+import checkAccess from './checkAccess.js';
+import getDirectoryContent from './getDirectoryContent.js';
 import getHomeDir from './getHomeDir.js';
 import getUserName from './getUserName.js';
-import getDirectoryContent from './getDirectoryContent.js';
 import goUp from './goUp.js';
 
 export const pathObject = { currentPath: getHomeDir() };
@@ -13,8 +14,13 @@ console.log(`You are currently in ${getHomeDir()}`);
 
 const rl = readline.createInterface({ input, output });
 
-rl.on('line', value => {
-  switch (value) {
+rl.on('line', line => {
+  if (line.startsWith('cd ') && !line.startsWith('cd ..') && line.slice(3).trim()) {
+    checkAccess(line);
+    return;
+  }
+
+  switch (line) {
     case 'ls':
       getDirectoryContent();
       break;
