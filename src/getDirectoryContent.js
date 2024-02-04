@@ -12,12 +12,11 @@ const getDirectoryContent = async () => {
         ? directories.push({ Name: item.name, Type: 'directory' })
         : files.push({ Name: item.name, Type: 'file' });
     }
-
     console.table([].concat(directories.sort(), files.sort()));
-    console.log(`You are currently in ${pathObject.currentPath}`);
   } catch (error) {
-    console.error(error);
+    console.log('Operation failed');
   }
+  console.log(`You are currently in ${pathObject.currentPath}`);
 };
 
 export default getDirectoryContent;

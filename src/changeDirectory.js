@@ -3,18 +3,18 @@ import path from 'path';
 
 import { pathObject } from './index.js';
 
-const checkAccess = line => {
+const changeDirectory = line => {
   const value = line.slice(3);
   access(path.join(pathObject.currentPath, value), error => {
     if (error) {
       access(value, error => {
         if (error) {
+          console.log(`Path doesn't exist`);
           console.log('Operation failed');
-          console.log(`You are currently in ${pathObject.currentPath}`);
         } else {
           pathObject.currentPath = path.join(value, path.sep);
-          console.log(`You are currently in ${pathObject.currentPath}`);
         }
+        console.log(`You are currently in ${pathObject.currentPath}`);
       });
     } else {
       pathObject.currentPath = path.join(pathObject.currentPath, value);
@@ -23,4 +23,4 @@ const checkAccess = line => {
   });
 };
 
-export default checkAccess;
+export default changeDirectory;

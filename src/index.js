@@ -2,7 +2,7 @@ import * as readline from 'readline/promises';
 import { stdin as input, stdout as output } from 'process';
 
 import addFile from './addFile.js';
-import checkAccess from './checkAccess.js';
+import changeDirectory from './changeDirectory.js';
 import getDirectoryContent from './getDirectoryContent.js';
 import getHomeDir from './getHomeDir.js';
 import getUserName from './getUserName.js';
@@ -22,7 +22,7 @@ rl.on('line', line => {
   }
 
   if (line.startsWith('cd ') && !line.startsWith('cd ..') && line.slice(3).trim()) {
-    checkAccess(line);
+    changeDirectory(line);
     return;
   }
 
