@@ -10,6 +10,7 @@ const checkAccess = line => {
       access(value, error => {
         if (error) {
           console.log('Operation failed');
+          console.log(`You are currently in ${pathObject.currentPath}`);
         } else {
           pathObject.currentPath = path.join(value, path.sep);
           console.log(`You are currently in ${pathObject.currentPath}`);
