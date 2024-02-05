@@ -10,6 +10,7 @@ import goUp from './goUp.js';
 import readFile from './readFile.js';
 import renameFile from './renameFile.js';
 import copyFile from './copyFile.js';
+import removeFile from './removeFile.js';
 
 export const pathObject = { currentPath: getHomeDir() };
 
@@ -36,6 +37,11 @@ rl.on('line', line => {
 
   if (line.startsWith('cp ') && line.slice(3).trim()) {
     copyFile(line);
+    return;
+  }
+
+  if (line.startsWith('rm ') && line.slice(3).trim()) {
+    removeFile(line);
     return;
   }
 

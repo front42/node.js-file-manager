@@ -9,3 +9,4 @@ Go to project directory and use this commands to enjoy:
 - cat path_to_read_file - prints file content in terminal (also you can use just filename.ext if it's in current working directory)
 - rn path_to_file new_filename - renames file at existing path
 - cp path_to_file path_to_new_directory - copies file to specified directory
+- rm path_to_file - removes existing file
