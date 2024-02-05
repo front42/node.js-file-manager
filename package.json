@@ -1,7 +1,7 @@
 {
   "name": "file-manager",
   "version": "1.0.0",
-  "description": "node.js-cli-file-manager",
+  "description": "Node.js CLI file manager",
   "engines": {
     "node": ">=20.0.0"
   },

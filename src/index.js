@@ -7,6 +7,7 @@ import getDirectoryContent from './getDirectoryContent.js';
 import getHomeDir from './getHomeDir.js';
 import getUserName from './getUserName.js';
 import goUp from './goUp.js';
+import readFile from './readFile.js';
 
 export const pathObject = { currentPath: getHomeDir() };
 
@@ -18,6 +19,11 @@ const rl = readline.createInterface({ input, output });
 rl.on('line', line => {
   if (line.startsWith('add ') && line.slice(4).trim()) {
     addFile(line);
+    return;
+  }
+
+  if (line.startsWith('cat ') && line.slice(4).trim()) {
+    readFile(line);
     return;
   }
 
