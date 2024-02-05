@@ -8,6 +8,7 @@ import getHomeDir from './getHomeDir.js';
 import getUserName from './getUserName.js';
 import goUp from './goUp.js';
 import readFile from './readFile.js';
+import renameFile from './renameFile.js';
 
 export const pathObject = { currentPath: getHomeDir() };
 
@@ -24,6 +25,11 @@ rl.on('line', line => {
 
   if (line.startsWith('cat ') && line.slice(4).trim()) {
     readFile(line);
+    return;
+  }
+
+  if (line.startsWith('rn ') && line.slice(3).trim()) {
+    renameFile(line);
     return;
   }
 
