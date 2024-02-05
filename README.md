@@ -10,3 +10,4 @@ Go to project directory and use this commands to enjoy:
 - rn path_to_file new_filename - renames file at existing path
 - cp path_to_file path_to_new_directory - copies file to specified directory
 - rm path_to_file - removes existing file
+- mv path_to_file path_to_new_directory - moves file to new directory

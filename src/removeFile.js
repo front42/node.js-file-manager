@@ -5,7 +5,7 @@ import { pathObject } from './index.js';
 
 const removeFile = async (line) => {
   try {
-    let pathToRemoveFile = line.slice(3).trim();
+    let [pathToRemoveFile] = line.slice(3).trim().split(' ');
     pathToRemoveFile = await checkPath(pathToRemoveFile);
     await fs.unlink(pathToRemoveFile);
     console.log('Success!');
