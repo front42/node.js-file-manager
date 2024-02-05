@@ -14,6 +14,8 @@ import moveFile from './moveFile.js';
 import removeFile from './removeFile.js';
 import getOs from './getOs.js';
 import calcHash from './calcHash.js';
+import compressFile from './compressFile.js';
+import decompressFile from './decompressFile.js';
 
 export const pathObject = { currentPath: getHomeDir() };
 
@@ -65,6 +67,16 @@ rl.on('line', line => {
 
   if (line.startsWith('hash ') && line.slice(5).trim()) {
     calcHash(line);
+    return;
+  }
+
+  if (line.startsWith('compress ') && line.slice(9).trim()) {
+    compressFile(line);
+    return;
+  }
+
+  if (line.startsWith('decompress ') && line.slice(11).trim()) {
+    decompressFile(line);
     return;
   }
 

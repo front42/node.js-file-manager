@@ -4,7 +4,7 @@ Thanks for your attention to this simple project -
 just for testing custom CLI features.  
 Made with Node.js 20.9.0 LTS.  
 <img src="https://rolling-scopes-school.github.io/front42-JSFE2021Q1/presentation/z/front42.jpg" alt="logo" height="21"/>  
-Go to project directory and use this commands to enjoy:
+Go to project directory and use commands to enjoy, for example:
 - npm run start -- --username=username-you-like - starts the program 
 - cat path_to_read_file - prints file content in terminal (also you can use just filename.ext if it's in current working directory)
 - rn path_to_file new_filename - renames file at existing path
@@ -17,3 +17,6 @@ Go to project directory and use this commands to enjoy:
 - os --homedir - gets home directory and prints it to console
 - os --username - gets current system user name (not the username set with application starts) and prints it to console
 - hash path_to_file - calculates hash for file and prints it into console
+- compress path_to_file.TXT path_to_destination.BR - compress file using Brotli algorithm
+- decompress path_to_file.BR path_to_destination.TXT - decompress file using Brotli algorithm  
+and so on
