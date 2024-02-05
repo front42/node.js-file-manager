@@ -9,6 +9,7 @@ import getUserName from './getUserName.js';
 import goUp from './goUp.js';
 import readFile from './readFile.js';
 import renameFile from './renameFile.js';
+import copyFile from './copyFile.js';
 
 export const pathObject = { currentPath: getHomeDir() };
 
@@ -30,6 +31,11 @@ rl.on('line', line => {
 
   if (line.startsWith('rn ') && line.slice(3).trim()) {
     renameFile(line);
+    return;
+  }
+
+  if (line.startsWith('cp ') && line.slice(3).trim()) {
+    copyFile(line);
     return;
   }
 
