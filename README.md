@@ -16,3 +16,4 @@ Go to project directory and use this commands to enjoy:
 - os --architecture - gets CPU architecture for which Node.js binary has compiled and print it to console
 - os --homedir - gets home directory and prints it to console
 - os --username - gets current system user name (not the username set with application starts) and prints it to console
+- hash path_to_file - calculates hash for file and prints it into console

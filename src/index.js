@@ -13,6 +13,7 @@ import copyFile from './copyFile.js';
 import moveFile from './moveFile.js';
 import removeFile from './removeFile.js';
 import getOs from './getOs.js';
+import calcHash from './calcHash.js';
 
 export const pathObject = { currentPath: getHomeDir() };
 
@@ -59,6 +60,11 @@ rl.on('line', line => {
 
   if (line.startsWith('os --') && line.slice(5).trim()) {
     getOs(line);
+    return;
+  }
+
+  if (line.startsWith('hash ') && line.slice(5).trim()) {
+    calcHash(line);
     return;
   }
 
