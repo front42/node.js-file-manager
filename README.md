@@ -9,5 +9,10 @@ Go to project directory and use this commands to enjoy:
 - cat path_to_read_file - prints file content in terminal (also you can use just filename.ext if it's in current working directory)
 - rn path_to_file new_filename - renames file at existing path
 - cp path_to_file path_to_new_directory - copies file to specified directory
-- rm path_to_file - removes existing file
 - mv path_to_file path_to_new_directory - moves file to new directory
+- rm path_to_file - removes existing file
+- os --EOL - gets default system End-Of-Line and prints it to console
+- os --cpus - gets host machine CPUs info (overall amount of CPUS, model and clock rate in GHz for each of them) and prints it to console
+- os --architecture - gets CPU architecture for which Node.js binary has compiled and print it to console
+- os --homedir - gets home directory and prints it to console
+- os --username - gets current system user name (not the username set with application starts) and prints it to console

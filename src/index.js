@@ -12,6 +12,7 @@ import renameFile from './renameFile.js';
 import copyFile from './copyFile.js';
 import moveFile from './moveFile.js';
 import removeFile from './removeFile.js';
+import getOs from './getOs.js';
 
 export const pathObject = { currentPath: getHomeDir() };
 
@@ -53,6 +54,11 @@ rl.on('line', line => {
 
   if (line.startsWith('cd ') && !line.startsWith('cd ..') && line.slice(3).trim()) {
     changeDirectory(line);
+    return;
+  }
+
+  if (line.startsWith('os --') && line.slice(5).trim()) {
+    getOs(line);
     return;
   }
 
